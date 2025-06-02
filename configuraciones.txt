@@ -1,0 +1,11 @@
+docker build -t backend-node .
+
+docker run -d -p 3001:3001 --name mi-contenedor backend-node
+
+docker tag backend-node nono2289/backend-node:produccion
+
+docker push nono2289/backend-node:produccion
+
+docker pull nono2289/backend-node:produccion
+
+docker run -d -p 3001:3001 --name backend-node nono2289/backend-node:produccion
